@@ -186,15 +186,15 @@
                     <div class="services-3-content-in mb-30">
                         <img src="img/services/services-5.png" class="pt-20 pb-20" alt="">
                         <h2 class="section-sub-head pb-23">Pick up</h2>
-                        <p class="text pb-33">Utiliza nuestro servicio de Personal Shopper, envíanos tu lista de compras via correo electrónico y nosotros hacemos el resto. Aprovecha nuestras afiliaciones en las grandes cadenas de mayoristas como Costco, Sam’s Club, etc. Y compra la cantidad que desees sin restricciones.</p>
+                        <p class="text pb-33">Buscamos tu carga a domicilio para luego enviarla a Venezuela y/o Panamá.</p>
                     </div>
                 </div>
                 <div class="services-3-content pl-sm-0 pr-sm-0 col-md-6 pl-10 pr-10">
                     <div class="services-3-content-in">
                         <img src="img/services/services-6.png" class="pt-20 pb-20" alt="">
-                        <h2 class="section-sub-head pb-23">Skyway at home</h2>
+                        <h2 class="section-sub-head pb-23">Personal Shopper</h2>
                         <p class="text pb-33">
-                            Skyway at home es un servicio a domicilio que ofrece todas las ventajas de un courier normal pero en tu casa u oficina. Iremos a donde te encuentres, te re-empacaremos tus compras, te pesaremos y mediremos tus cajas, decides si quieres tu envío Aéreo o Marítimo y podrás pagarlo al instante.</p>
+                            Utiliza nuestro servicio de Personal Shopper, envíanos tu lista de compras y nosotros hacemos el resto. Aprovecha nuestras afiliaciones en las grandes cadenas de mayoristas como Costco, Sam’s Club, etc. Y compra la cantidad que desees sin restricciones.</p>
                     </div>
                 </div>
             </div>
@@ -210,8 +210,15 @@
                     <h1 class="header-text">costo total de envío</h1>
                 </div>
                 <div class="calculate-1-left pt-sm-30 pl-xs-0 pr-xs-0 col-md-7 pl-0 pr-40">
-                    <form action="get">
-                        <div class="pl-xs-0 pr-xs-0 col-sm-6 pl-0 pr-15">
+                    <form id="shipping-calculator-form">
+                        <div class="pl-xs-0 pr-xs-0 col-sm-12 pl-0 pr-15">
+                            <p class="calculate-1-form-head pt-0">Tipo de envio</p>
+                            <select id="calculate-1-select">
+                                <option value="airplane">Aéreo</option>
+                                <option value="cargo">Marítimo</option>
+                            </select>
+                        </div>
+                        <!-- <div class="pl-xs-0 pr-xs-0 col-sm-6 pl-0 pr-15">
                             <p class="calculate-1-form-head">distance</p>
                             <input type="text" id="calculate-1-distance">
                         </div>
@@ -219,21 +226,28 @@
                             <p class="calculate-1-form-head">weight</p>
                             <input type="text" id="calculate-1-weight">
                         </div>
+                        <div class="clearfix"></div> -->
+
+                        <div class="pl-xs-0 pr-xs-0 col-sm-3 pl-0 pr-10 calculate-height">
+                            <p class="calculate-1-form-head">Alto</p>
+                            <input type="number" id="calculate-1-height" step="0.1" min="0" pattern="[-+]?[0-9]*[.,]?[0-9]+" placeholder="inch" required>
+                        </div>
+                        <div class="pl-xs-0 pr-xs-0 col-sm-3 pl-10 pr-10 calculate-width">
+                            <p class="calculate-1-form-head">Ancho</p>
+                            <input type="number" id="calculate-1-width" step="0.1" min="0" pattern="[-+]?[0-9]*[.,]?[0-9]+" placeholder="inch" required>
+                        </div>
+                        <div class="pl-xs-0 pr-xs-0 col-sm-3 pl-10 pr-10 calculate-length">
+                            <p class="calculate-1-form-head">Largo</p>
+                            <input type="number" id="calculate-1-length" step="0.1" min="0" pattern="[-+]?[0-9]*[.,]?[0-9]+" placeholder="inch" required>
+                        </div>
+                        <div class="pl-xs-0 pr-xs-0 col-sm-3 pl-10 pr-0 calculate-weight">
+                            <p class="calculate-1-form-head">Peso</p>
+                            <input type="number" id="calculate-1-weight" step="0.1" min="0" pattern="[-+]?[0-9]*[.,]?[0-9]+" placeholder="lb" required>
+                        </div>
+                        
+                        
                         <div class="clearfix"></div>
-                        <div class="pl-xs-0 pr-xs-0 col-sm-4 pl-0 pr-20">
-                            <p class="calculate-1-form-head">height</p>
-                            <input type="text" id="calculate-1-height">
-                        </div>
-                        <div class="pl-xs-0 pr-xs-0 col-sm-4 pl-10 pr-10">
-                            <p class="calculate-1-form-head">width</p>
-                            <input type="text" id="calculate-1-width">
-                        </div>
-                        <div class="pl-xs-0 pr-xs-0 col-sm-4 pl-20 pr-0">
-                            <p class="calculate-1-form-head">length</p>
-                            <input type="text" id="calculate-1-length">
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="pl-xs-0 pr-xs-0 col-sm-4 pl-0 pr-15">
+                        <!-- <div class="pl-xs-0 pr-xs-0 col-sm-4 pl-0 pr-15">
                             <p class="calculate-1-form-head c-3 pb-30">extra services</p>
                             <label for="checkbox-one" class="calculate-1-label">
                                 <input type="checkbox" id="checkbox-one">express delivery</label>
@@ -244,20 +258,32 @@
                             <label for="checkbox-three" class="calculate-1-label">
                                 <input type="checkbox" class="mb-0" id="checkbox-three">packaging</label>
                             <div class="clearfix"></div>
+                        </div> -->
+
+                        <div class="cargo-shipping">
+                            <div class="pl-xs-0 pr-xs-0 col-sm-12 pl-15 pr-0">
+                                <p class="calculate-1-form-head c-3 pb-30">ciudades</p>
+                                <label for="radio-one" class="calculate-1-label pb-xs-10">
+                                <input type="radio" name="radio" id="radio-one" value="1" checked>Caracas, Maracay, Valencia, Barquisimeto.</label>
+                                <div class="clearfix"></div>
+                                <label for="radio-two" class="calculate-1-label pb-xs-15">
+                                <input type="radio" name="radio" id="radio-two" value="2">Puerto la Cruz, Anaco, El Tigre, Barcelona, Puerto Ordaz, Bolivar, Maturin, Ciudad Bolivar.</label>
+                                <div class="clearfix"></div>
+                                <label for="radio-three" class="calculate-1-label pb-xs-15">
+                                <input type="radio" name="radio" id="radio-three" value="3">Maracaibo, Merida, Trujillo, Valera, San Cristobal, Barinas, Punto Fijo, Portuguesa, Cojedes, Acarigua.</label>
+                                <div class="clearfix"></div>
+                            </div>
                         </div>
-                        <div class="pl-xs-0 pr-xs-0 col-sm-4 pl-15 pr-0">
-                            <p class="calculate-1-form-head c-3 pb-30">fragile</p>
-                            <label for="radio-one" class="calculate-1-label">
-                                <input type="radio" name="radio" id="radio-one" checked>Yes</label>
-                            <div class="clearfix"></div>
-                            <label for="radio-two" class="calculate-1-label">
-                                <input type="radio" name="radio" class="mb-0" id="radio-two">no</label>
-                            <div class="clearfix"></div>
-                        </div>
+          
                         <div class="clearfix"></div>
-                        <div class="pl-xs-0 pr-xs-0 col-sm-12 pl-0 pr-0">
+
+                        <div class="pl-xs-0 pr-xs-0 col-xs-12 col-sm-3 pl-0">
                             <p class="calculate-1-form-head">total</p>
-                            <input type="text" id="calculate-1-total" value="$20">
+                            <input type="text" id="calculate-1-total" value="$0" readonly>
+                        </div>
+
+                        <div class="pl-xs-0 pr-xs-0 col-xs-12 pl-0">
+                            <button type="submit" class="default-btn db mt-40" id="calculate-button">Calcular</button>
                         </div>
 
                     </form>
@@ -276,53 +302,79 @@
             <div class="container pl-0 pr-0">
                 <div class="col-md-6 pl-0 pr-15">
                     <div class="faq-3 pt-sm-120">
-                        <h3 class="faq-3-head">frequently asked questions</h3>
+                        <h3 class="faq-3-head">preguntas frecuentes</h3>
                         <div id="accordion">
                             <div class="panel">
                                 <div class="panel-heading">
                                     <h4 class="c-3">
-                                    <a class="c-3 accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1">What we believe great pricing?</a>
+                                    <a class="c-3 accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1">¿Como abro un casillero para enviar los paquetes a su dirección?</a>
                                 </h4>
                                 </div>
                                 <div id="collapse1" class="collapse">
                                     <div class="panel-body">
-                                        <p class="text">Monetization termsheet long tail user experience. Direct mailing mass get market research &amp; development iteration technology. Ramen low hanging fruit and backing. Direct mailing long tail disruptive ownership metrics crowdfunding. User experience gamification branding.</p>
+                                        <p class="text"> 
+                                            Una vez te hayas registrado en nuestro sistema, puedes proceder a enviar tus paquetes a nuestro almacén en el siguiente formato: <br>
+                                           <q>Nombre y Apellido - SKY + Numero de casillero, 8478 NW 72nd ST Miami FL 33166.</q>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="panel">
                                 <div class="panel-heading">
                                     <h4 class="c-3">
-                                    <a class="c-3 accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse2">Can still help us reduce our costs?</a>
+                                    <a class="c-3 accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2">¿Que métodos de pagos manejan?</a>
                                 </h4>
                                 </div>
-                                <div id="collapse2" class="collapse in">
+                                <div id="collapse2" class="collapse">
                                     <div class="panel-body">
-                                        <p class="text">Monetization termsheet long tail user experience. Direct mailing mass get market research &amp; development iteration technology. Ramen low hanging fruit and backing. Direct mailing long tail disruptive ownership metrics crowdfunding. User experience gamification branding.</p>
+                                        <p class="text">
+                                            Dólares <br>
+                                            Tarjeta de crédito (Visa, Mastercard, American Express). <br>
+                                            Deposito directo. <br>
+                                            Transferencias Bancarias. <br>
+                                            Transferencias vía Zelle a (skywayfcargo@gmail.com). Coloca en Memo tu número de Factura. <br>
+                                            PayPal (skywayfcargo@gmail.com). Monto + 5%. <br>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="panel">
                                 <div class="panel-heading">
                                     <h4 class="c-3">
-                                    <a class="c-3 accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">Prototype branding assets technology customer?</a>
+                                    <a class="c-3 accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">¿Cuanto demoran en entregar un paquete?</a>
                                 </h4>
                                 </div>
                                 <div id="collapse3" class="collapse">
                                     <div class="panel-body">
-                                        <p class="text">Monetization termsheet long tail user experience. Direct mailing mass get market research &amp; development iteration technology. Ramen low hanging fruit and backing. Direct mailing long tail disruptive ownership metrics crowdfunding. User experience gamification branding.</p>
+                                        <p class="text">
+                                            Varia segun el destino. <br>
+                                            Maritimo de 3 a 4 semanas. <br>
+                                            Aéreo de 5 a 7 dias.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="panel">
                                 <div class="panel-heading">
                                     <h4 class="c-3">
-                                    <a class="c-3 accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4">Crowdsource alpha infrastructure partnership?</a>
+                                    <a class="c-3 accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4">¿Llegan directo a la puerta de la casa o debo retirar en la oficina?</a>
                                 </h4>
                                 </div>
                                 <div id="collapse4" class="collapse">
                                     <div class="panel-body">
-                                        <p class="text">Monetization termsheet long tail user experience. Direct mailing mass get market research &amp; development iteration technology. Ramen low hanging fruit and backing. Direct mailing long tail disruptive ownership metrics crowdfunding. User experience gamification branding.</p>
+                                        <p class="text">Llegamos directo a la puerta de tu casa u oficina.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h4 class="c-3">
+                                    <a class="c-3 accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse5">¿En el maritimo importa el peso?</a>
+                                </h4>
+                                </div>
+                                <div id="collapse5" class="collapse">
+                                    <div class="panel-body">
+                                        <p class="text">No, no importa el peso sin embargo una caja muy pesada puede sufrir daños en el viaje.</p>
                                     </div>
                                 </div>
                             </div>

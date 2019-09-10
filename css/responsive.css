@@ -80,6 +80,10 @@
     .calculate-1-right-abs {
         display: none;
     }
+
+    .calculate-1 #calculate-1-select {
+        width: 50%;
+    }
 }
 
 @media only screen and (max-width: 1199px){
@@ -210,6 +214,10 @@
         position: relative;
         background: #fff;
         animation-name: inherit;
+    }
+
+    .calculate-1 #calculate-1-select {
+        width: 100%;
     }
 }
 
