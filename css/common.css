@@ -3698,6 +3698,21 @@ img {
     transition: .7s ease !important;
 }
 
+.default-btn-login {
+	font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 900 !important;
+    letter-spacing: .15px !important;
+    color: #fff;
+    padding: 15px 30px;
+    background: #fac312;
+    line-height: 10px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    display: inline-block;
+    border: 1px solid #fac312;
+    transition: .7s ease !important;
+}
+
 .default-btn:hover{
 	background: transparent;
 	border-color: #fac312;

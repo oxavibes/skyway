@@ -129,6 +129,23 @@
     .hidden-bar-opener {
         display: block;
     }
+
+    .about-1-left-img img {
+        width: 95%;
+        object-fit: cover;
+     }
+     
+     .about-1-left-img:before {
+        content: "";
+        height: 95%;
+        width: 95%;
+        background: #f7f7f7;
+        position: absolute;
+        top: -15px;
+        left: -16px;
+        z-index: -1;
+        transition: background .25s linear;
+     }
 }
 
 @media only screen and (max-width: 767px){

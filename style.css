@@ -8166,11 +8166,18 @@ button.default-btn.theme-btn.btn-style-one.add-to-cart {
     color: #fff;
 }
 
-
 .footer-1-middle-column ul {
     margin-bottom: 45px;
 }
 
+/*======= Iframe ============*/
+
+.iframe-shadow {
+   padding-left: 36px;
+   padding-right: 36px;
+   min-height: 245px;
+   box-shadow: 0 0 5px #aaaaaa;
+}
 
 
 

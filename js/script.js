@@ -854,7 +854,8 @@
             $('.cargo-shipping').fadeToggle("slow");
             $('.calculate-weight').fadeToggle("slow");
 
-            $('#calculate-weight').attr('required', function (_, attr) { return !attr });
+            //Disabling required attribute in weight input 
+            $('#calculate-1-weight').attr('required', function (_, attr) { return !attr });
         });
     }
 
@@ -863,13 +864,20 @@
 
 
     function cargoShippingCost(height, width, length) {
+        var min_cost_one = 16,
+            min_cost_two = 18,
+            min_cost_three = 19;
 
         var selected_location = $('.cargo-shipping').find(":checked").val();
 
-        var cargo_cost_cft = height * width * length / 1728,
-            cargo_cost_one = (16 * cargo_cost_cft).toFixed(2),
-            cargo_cost_two = (18 * cargo_cost_cft).toFixed(2),
-            cargo_cost_three = (19 * cargo_cost_cft).toFixed(2);
+        var cargo_cost_cft = height * width * length / 1728;
+        var cargo_cost_one = (min_cost_one * cargo_cost_cft).toFixed(2);
+        var cargo_cost_two = (min_cost_two * cargo_cost_cft).toFixed(2);
+        var cargo_cost_three = (min_cost_three * cargo_cost_cft).toFixed(2);
+
+        cargo_cost_one = (cargo_cost_one < min_cost_one) ? min_cost_one : cargo_cost_one;
+        cargo_cost_two = (cargo_cost_two < min_cost_two) ? min_cost_two : cargo_cost_two; 
+        cargo_cost_three = (cargo_cost_three < min_cost_three) ? min_cost_three : cargo_cost_three;  
 
             switch(selected_location) {
                 case '1':
@@ -882,11 +890,21 @@
     }
 
     function flightShippingCost(height, width, length, weight) {
+        const min_cost = 25;
         const price_per_lb = 4.5;
-        var flight_cost = (price_per_lb * weight).toFixed(2);
+        var greater_cost = null;
+
         var vlb = (height * width * length / 166).toFixed(2);
-        var vlb_cost = (vlb * price_per_lb).toFixed(2);
-        var greater_cost = (vlb > weight) ? vlb_cost : flight_cost;
+
+        var vlb_cost = (price_per_lb * vlb).toFixed(2);
+        var flight_cost = (price_per_lb * weight).toFixed(2);
+
+
+        if(vlb > 6 || weight > 6) {
+            greater_cost = (vlb > weight) ? vlb_cost : flight_cost;
+        } else {
+            greater_cost = min_cost;
+        }
 
         return greater_cost;
     }
@@ -903,7 +921,7 @@
         var weight = $('#calculate-1-weight').val() || null;
         var shipping_type = $('#calculate-1-select').find(":selected").val() 
 
-        if(shipping_type == 'airplane') {
+        if(shipping_type === 'airplane') {
             total = flightShippingCost(height, width, length, weight);
         } else {
             total = cargoShippingCost(height, width, length);
