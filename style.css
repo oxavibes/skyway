@@ -118,7 +118,11 @@ Main nav style
    display: -o-flex;
    display: flex;
    align-items: center;
-   height: 96px;
+   height: 110px;
+}
+
+.nav-1 .logo {
+   width: 170px;
 }
 
 .nav-1 .nav-itm-wrapper>ul>li {
@@ -505,7 +509,7 @@ Calculate-1 Section
 .calculate-1-right-abs img {
    height: auto;
    width: auto;
-   max-width: 650px;
+   /*max-width: 650px;*/
 }
 
 
@@ -8177,6 +8181,7 @@ button.default-btn.theme-btn.btn-style-one.add-to-cart {
    padding-right: 36px;
    min-height: 245px;
    box-shadow: 0 0 5px #aaaaaa;
+   border-radius: 5px;
 }
 
 

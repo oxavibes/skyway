@@ -351,7 +351,7 @@
                 items: 5,
                 merge: true,
                 margin: 10,
-                autoplayTimeout: 5000,
+                autoplayTimeout: 2000,
                 responsiveClass: false,
                 nav: false,
                 responsive: {
