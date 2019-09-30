@@ -2344,7 +2344,7 @@ Team page style
 ====================================================================
 
 ***/
-
+/*
 .team-img-wrapper:after {
    content: "";
    height: 100%;
@@ -2363,7 +2363,7 @@ Team page style
    transform: scaleX(1);
    transition: all .25s linear;
    transition-delay: 0s;
-}
+}*/
 
 .team-social-wrapper {
    color: #222222;
