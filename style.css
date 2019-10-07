@@ -3755,7 +3755,6 @@ Practise Area
 .profession_list ul {
    margin: 0;
    padding: 0;
-   list-style: none;
 }
 
 .profession_list ul li {
@@ -6980,6 +6979,30 @@ Practise Area
    color: #1c1c1c;
    font-size: 14px;
 }
+
+.product-details .basic-details .text li {
+   list-style: disc outside none;
+   display: list-item;
+   margin-left: 1em;
+}
+
+
+.product-details .table {
+    border-collapse: collapse;
+    display: block;
+}
+
+.product-details .table thead,
+.product-details .table thead tr {
+   display: block;
+}
+
+.product-details .table tbody {
+   display: block;
+   overflow-y: auto;
+   height: 550px;
+}
+
 
 .product-details .basic-details .item-meta a {
    position: relative;
