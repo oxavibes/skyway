@@ -67,6 +67,10 @@
 
  ***/
 
+ html {
+	scroll-behavior: smooth;   
+ }
+
 body {
 	-webkit-font-smoothing: antialiased;
     overflow-x: hidden !important;
@@ -3598,6 +3602,10 @@ body {
 
 .lh-11 {
     line-height: 11px !important;
+}
+
+.lh-20 {
+	line-height: 20px !important;
 }
 
 @import url('css/font-awesome.css');

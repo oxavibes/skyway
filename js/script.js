@@ -556,7 +556,7 @@
 
 
     //Contact Form Validation
-    if ($('#contact-form')
+    /*if ($('#contact-form')
         .length) {
         $('#contact-form')
             .validate({
@@ -576,7 +576,7 @@
                     }
                 }
             });
-    }
+    }*/
 
 
     // Google Map Settings

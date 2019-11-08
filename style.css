@@ -772,6 +772,15 @@ News-1 Section
    text-transform: uppercase;
 }
 
+.quick-quote-head {
+   font-family: 'Source Sans Pro', sans-serif;
+   font-weight: 700;
+   font-size: 24px;
+   line-height: 16px;
+   color: #222222;
+   text-transform: uppercase;
+}
+
 .news-1-right p.text {
    padding-top: 33px;
    padding-bottom: 33px;
@@ -1015,7 +1024,7 @@ ul.footer-1-social li a:hover {
 }
 
 .hidden-bar .logo {
-   padding: 75px 0 105px;
+   padding: 30px 0 10px;
 }
 
 .hidden-bar .main-menu {
@@ -2276,15 +2285,19 @@ Other page banner bstyle
 
 .other-page-banner {
    position: relative;
-   height: 300px;
+   height: 400px;
    display: -webkit-flex;
    display: -moz-flex;
    display: -ms-flex;
    display: -o-flex;
    display: flex;
-   -ms-align-items: center;
-   align-items: center;
+   -ms-align-items: flex-end;
+   align-items: flex-end;
    justify-content: center;
+}
+
+.other-page-banner-content {
+   padding-bottom: 120px;
 }
 
 .other-page-banner:before {
@@ -6986,21 +6999,28 @@ Practise Area
    margin-left: 1em;
 }
 
-
 .product-details .table {
     border-collapse: collapse;
     display: block;
 }
 
-.product-details .table thead,
 .product-details .table thead tr {
+   display: flex;
+}
+
+.product-details .table th,
+.product-details .table td {
+   width: 25%;
+}
+
+.product-details .table thead {
    display: block;
 }
 
 .product-details .table tbody {
    display: block;
    overflow-y: auto;
-   height: 550px;
+   max-height: 450px;
 }
 
 
