@@ -69,7 +69,6 @@
                 },
                 submitHandler: function (form, event){
                     event.preventDefault()
-
                     //if (grecaptcha.getResponse()) {
                         $(form).ajaxSubmit({
                             type: "POST",
@@ -77,28 +76,28 @@
                             data: $(form).serialize(),
 
                             success: function () {
-                                var alertSuccess = $(this).find('.alert-success')
-                    
                                 //$('#contact-form :input').attr('disabled', 'disabled');
                                 $('#contact-form').fadeTo("slow", 1, function () {
+                                    var that = this
                                     //$(this).find(':input').attr('disabled', 'disabled');
                                     $(this).resetForm();
                                     $(this).find('label').css('cursor', 'default');
+                                    $(this).find('.alert-success').removeClass('hidden').fadeIn()
 
-                                    alertSuccess.removeClass('hidden').fadeIn()
+                                    
 
                                     setTimeout(function() {
-                                        alertSuccess.fadeOut('slow')
+                                        $(that).find('.alert-success').fadeOut('slow')
                                     }, 3000)
                                 })
                             },
                             error: function () {
-                                var alertError = $(this).find('.alert-error')
                                 $('#contactForm').fadeTo("slow", 1, function () {
-                                    alertError.removeClass('hidden').fadeIn()
+                                    var that = this
+                                    $(this).find('.alert-error').removeClass('hidden').fadeIn()
 
                                     setTimeout(function() {
-                                        alertError.fadeOut('slow')
+                                        $(that).find('.alert-error').fadeOut('slow')
                                     }, 3000)
                                 })
                             }
