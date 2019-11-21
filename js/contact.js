@@ -69,6 +69,9 @@
                 },
                 submitHandler: function (form, event){
                     event.preventDefault()
+
+                    var alertSuccess = $(this).find('.alert-success')
+                    var alertError = $(this).find('.alert-error')
                     //if (grecaptcha.getResponse()) {
                         $(form).ajaxSubmit({
                             type: "POST",
@@ -81,19 +84,20 @@
                                     //$(this).find(':input').attr('disabled', 'disabled');
                                     $(this).resetForm();
                                     $(this).find('label').css('cursor', 'default');
-                                    $(this).find('.alert-success').removeClass('hidden').fadeIn()
+                                    
+                                    alertSuccess.removeClass('hidden').fadeIn()
 
                                     setTimeout(function() {
-                                        $(this).find('.alert-success').fadeOut('slow')
+                                        alertSuccess.fadeOut('slow')
                                     }, 3000)
                                 })
                             },
                             error: function () {
                                 $('#contactForm').fadeTo("slow", 1, function () {
-                                    $(this).find('.alert-error').removeClass('hidden').fadeIn()
+                                    alertError.removeClass('hidden').fadeIn()
 
                                     setTimeout(function() {
-                                        $(this).find('.alert-error').fadeOut('slow')
+                                        alertError.fadeOut('slow')
                                     }, 3000)
                                 })
                             }
