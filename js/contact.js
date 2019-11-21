@@ -82,11 +82,19 @@
                                     $(this).resetForm();
                                     $(this).find('label').css('cursor', 'default');
                                     $(this).find('.alert-success').removeClass('hidden').fadeIn()
+
+                                    setTimeout(function() {
+                                        $(this).find('.alert-success').removeClass('hidden').fadeIn()
+                                    }, 3000)
                                 })
                             },
                             error: function () {
                                 $('#contactForm').fadeTo("slow", 1, function () {
                                     $(this).find('.alert-error').removeClass('hidden').fadeIn()
+
+                                    setTimeout(function() {
+                                        $(this).find('.alert-error').removeClass('hidden').fadeIn()
+                                    }, 3000)
                                 })
                             }
                         })
