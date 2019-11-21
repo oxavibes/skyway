@@ -76,7 +76,7 @@
                             data: $(form).serialize(),
 
                             success: function () {
-                                $('#contact-form :input').attr('disabled', 'disabled');
+                                //$('#contact-form :input').attr('disabled', 'disabled');
                                 $('#contact-form').fadeTo("slow", 1, function () {
                                     //$(this).find(':input').attr('disabled', 'disabled');
                                     $(this).resetForm();
@@ -84,7 +84,7 @@
                                     $(this).find('.alert-success').removeClass('hidden').fadeIn()
 
                                     setTimeout(function() {
-                                        $(this).find('.alert-success').removeClass('hidden').fadeIn()
+                                        $(this).find('.alert-success').fadeOut('slow')
                                     }, 3000)
                                 })
                             },
@@ -93,7 +93,7 @@
                                     $(this).find('.alert-error').removeClass('hidden').fadeIn()
 
                                     setTimeout(function() {
-                                        $(this).find('.alert-error').removeClass('hidden').fadeIn()
+                                        $(this).find('.alert-error').fadeOut('slow')
                                     }, 3000)
                                 })
                             }
