@@ -129,7 +129,7 @@ try {
                                                 style="font-size:0px;padding:0px 25px 0px 25px;word-break:break-word;">
                                                 <div
                                                     style="font-family:Arial, sans-serif;font-size:16px;font-weight:800;line-height:28px;text-align:center;text-transform:uppercase;color:#ffffff;">
-                                                    Nuevo pedido</div>
+                                                    Nuevo mensaje</div>
                                             </td>
                                         </tr>
                                     </table>
@@ -173,7 +173,7 @@ try {
                                                     <tbody>
                                                         <tr>
                                                             <td style="width:256px;"> <img alt="Mensaje" height="auto"
-                                                                    src="https://raw.githubusercontent.com/oxavibes/skyway/master/img/calculator.png"
+                                                                    src="https://www.skywayfcargo.com/img/email.png"
                                                                     style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"
                                                                     width="256" /> </td>
                                                         </tr>
@@ -280,7 +280,7 @@ try {
                                                     <tbody>
                                                         <tr>
                                                             <td style="width:128px;"> <img height="auto"
-                                                                    src="https://raw.githubusercontent.com/oxavibes/skyway/master/img/logo-1.png"
+                                                                    src="https://www.skywayfcargo.com/img/logo-1.png"
                                                                     style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"
                                                                     width="128" /> </td>
                                                         </tr>
