@@ -70,8 +70,6 @@
                 submitHandler: function (form, event){
                     event.preventDefault()
 
-                    var alertSuccess = $(this).find('.alert-success')
-                    var alertError = $(this).find('.alert-error')
                     //if (grecaptcha.getResponse()) {
                         $(form).ajaxSubmit({
                             type: "POST",
@@ -79,12 +77,14 @@
                             data: $(form).serialize(),
 
                             success: function () {
+                                var alertSuccess = $(this).find('.alert-success')
+                    
                                 //$('#contact-form :input').attr('disabled', 'disabled');
                                 $('#contact-form').fadeTo("slow", 1, function () {
                                     //$(this).find(':input').attr('disabled', 'disabled');
                                     $(this).resetForm();
                                     $(this).find('label').css('cursor', 'default');
-                                    
+
                                     alertSuccess.removeClass('hidden').fadeIn()
 
                                     setTimeout(function() {
@@ -93,6 +93,7 @@
                                 })
                             },
                             error: function () {
+                                var alertError = $(this).find('.alert-error')
                                 $('#contactForm').fadeTo("slow", 1, function () {
                                     alertError.removeClass('hidden').fadeIn()
 
