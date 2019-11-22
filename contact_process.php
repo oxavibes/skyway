@@ -11,7 +11,7 @@ require 'vendors/phpmailer/src/SMTP.php';
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
-$to = "admin@tubotones.com";
+$to = "almacenusa@skywayfcargo.com";
 $name = $_REQUEST['name'];
 $from = $_REQUEST['email'];
 $tel = $_REQUEST['tel'];
@@ -23,7 +23,7 @@ try {
     //Server settings
     $mail->SMTPDebug = 2;                                       // Enable verbose debug output
     $mail->isSMTP();
-    $mail->CharSet = 'UTF-8';                                            // Set mailer to use SMTP
+    $mail->CharSet = 'UTF-8';                                   // Set mailer to use SMTP
     $mail->Host       = 'smtp.gmail.com';                        // Specify main and backup SMTP servers
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'kryptopayapp@gmail.com';               	// SMTP username

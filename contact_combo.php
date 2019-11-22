@@ -11,7 +11,7 @@ require 'vendors/phpmailer/src/SMTP.php';
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
-$to = "admin@tubotones.com";
+$to = "almacenusa@skywayfcargo.com";
 $name = $_REQUEST['name'];
 $from = $_REQUEST['email'];
 $quantity = $_REQUEST['quantity'];
