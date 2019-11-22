@@ -10,7 +10,7 @@
             phone_number = phone_number.replace(/\s+/g, "");
             return this.optional(element) || phone_number.length > 9 &&
                 phone_number.match(/^(?:(?:00|\+)58|0)(?:2(?:12|4[0-9]|5[1-9]|6[0-9]|7[0-8]|8[1-35-8]|9[1-5]|3[45789])|4(?:1[246]|2[46]))\d{7}$/);
-        }, "Por favor, ingresa un numero valido"); 
+        }, "Por favor, ingresa un numero valido");
 
         // validate contactForm form
         $(function () {
@@ -62,46 +62,51 @@
                     message: {
                         minlength: "Por favor, el mensaje debe ser mayor a 10 caracteres",
                         required: "Por favor, ingresa tu mensaje",
-                    }, 
+                    },
                     /*hiddenRecaptcha: {
                         required: "Por favor, complete el recaptcha"
                     }*/
                 },
-                submitHandler: function (form, event){
+                submitHandler: function (form, event) {
                     event.preventDefault()
+                    $('#contact-form button').prop('disabled', true)
+                    $('#contact-form button > i').toggleClass('hidden')
+
                     //if (grecaptcha.getResponse()) {
-                        $(form).ajaxSubmit({
-                            type: "POST",
-                            url: "contact_process.php",
-                            data: $(form).serialize(),
+                    $(form).ajaxSubmit({
+                        type: "POST",
+                        url: "contact_process.php",
+                        data: $(form).serialize(),
 
-                            success: function () {
-                                //$('#contact-form :input').attr('disabled', 'disabled');
-                                $('#contact-form').fadeTo("slow", 1, function () {
-                                    var that = this
-                                    //$(this).find(':input').attr('disabled', 'disabled');
-                                    $(this).resetForm();
-                                    $(this).find('label').css('cursor', 'default');
-                                    $(this).find('.alert-success').removeClass('hidden').fadeIn()
+                        success: function () {
+                            //$('#contact-form :input').attr('disabled', 'disabled');
+                            $('#contact-form').fadeTo("slow", 1, function () {
+                                var that = this
+                                //$(this).find(':input').attr('disabled', 'disabled');
+                                $(this).resetForm();
+                                $(this).find('label').css('cursor', 'default');
+                                $(this).find('.alert-success').removeClass('hidden').fadeIn()
 
-                                    
+                                setTimeout(function () {
+                                    $(that).find('.alert-success').fadeOut('slow')
+                                }, 3000)
+                            })
+                            $('#contact-form button').prop('disabled', false)
+                            $('#contact-form button > i').toggleClass('hidden')
+                        },
+                        error: function () {
+                            $('#contactForm').fadeTo("slow", 1, function () {
+                                var that = this
+                                $(this).find('.alert-error').removeClass('hidden').fadeIn()
 
-                                    setTimeout(function() {
-                                        $(that).find('.alert-success').fadeOut('slow')
-                                    }, 3000)
-                                })
-                            },
-                            error: function () {
-                                $('#contactForm').fadeTo("slow", 1, function () {
-                                    var that = this
-                                    $(this).find('.alert-error').removeClass('hidden').fadeIn()
-
-                                    setTimeout(function() {
-                                        $(that).find('.alert-error').fadeOut('slow')
-                                    }, 3000)
-                                })
-                            }
-                        })
+                                setTimeout(function () {
+                                    $(that).find('.alert-error').fadeOut('slow')
+                                }, 3000)
+                            })
+                            $('#contact-form button').prop('disabled', false)
+                            $('#contact-form button > i').toggleClass('hidden')
+                        }
+                    })
                     /*} else {
                         alert('Por favor, complete el recaptcha')
                     }*/
